@@ -18,7 +18,15 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>Welcome to Ionic Archi Calendar</strong>
+    <p>You can use the menu on the top left to see the different weeks </p>
+    <p>You can also click the blue button on the bottom left to get directed there</p>
   </div>
+
+  <ion-fab vertical="bottom" horizontal='start'>
+    <ion-fab-button [routerLink]="['/semaines']">
+      <ion-icon ></ion-icon> 
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
