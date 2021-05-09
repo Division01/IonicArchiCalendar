@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item >
+      <ion-label> Titre de la semaine </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let s of semaines; let i=index">
+      <ion-label (click)="showDetail(s)"> Semaine n° {{i}} : {{ s.title }}</ion-label>
+      <ion-button (click)='editSemaine(s.id)'>Edit</ion-button>
+    </ion-item>
+    
+    <ion-card *ngIf="show">
+      <app-semaine-detail [semaine]="semaine"></app-semaine-detail>
+    </ion-card>
+  
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal='end'>
+    <ion-fab-button [routerLink]="['/semaines/add']">
+      <ion-icon name="add"></ion-icon> 
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+

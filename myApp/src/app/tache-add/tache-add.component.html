@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2> Nouvelle tache</h2>
+  <div>
+    <ion-label>
+      <ion-input type = 'text' [(ngModel)]="tache.description" placeholder="Description (min 10 charactères)"></ion-input>
+    </ion-label><br>
+
+    <ion-label>
+      <ion-input type='datetime' [(ngModel)]="tache.DueDate" style='flex:1; display: flex;'></ion-input>
+    </ion-label>
+
+    <div style='flex:1; display: flex; align-items: center;'>
+      <ion-label for="done" style='flex:1; display: flex;'>Faite : </ion-label>
+      <ion-checkbox  [(ngModel)]="tache.Done" style='flex:1; display: flex;'></ion-checkbox><br>
+    </div>
+
+    <ion-button (click)='addTache()'>Sauvegarder la nouvelle tâche ?</ion-button>
+
+  </div>
+</ion-content>

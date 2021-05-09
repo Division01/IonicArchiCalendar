@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2> Modifier une tache</h2>
+  <div>
+    <ion-label>
+      <ion-input style='background-color:grey' type = 'text' [(ngModel)]="tache.description"></ion-input>
+    </ion-label><br>
+
+    <ion-label>
+      <ion-input style='background-color:grey' type='datetime | date' [(ngModel)]="tache.DueDate" style='flex:1; display: flex;'></ion-input>
+    </ion-label>
+
+    <div style='flex:1; display: flex; align-items: center;'>
+      <ion-label for="done" style='flex:1; display: flex;'>Faite : </ion-label>
+      <ion-checkbox  [(ngModel)]="tache.Done" style='flex:1; display: flex;'></ion-checkbox><br>
+    </div>
+
+    <ion-button (click)='updateTache()'>Update</ion-button>
+
+  </div>
+</ion-content>
